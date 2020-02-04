@@ -8,7 +8,7 @@ export const routers = [
     page: "profile"
   },
   {
-    path: "/test",
-    page: "test"
+    path: "/materials",
+    page: "materials"
   }
 ];
