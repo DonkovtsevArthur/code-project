@@ -5,9 +5,7 @@ import {
   MenuItem,
   IconUser,
   IconList,
-  IconInstagram,
-  IconPackage,
-  IconHome,
+  IconArchive,
   MenuDivider
 } from "sancho";
 
@@ -17,23 +15,19 @@ const Menu: React.FC = () => {
   return (
     <MenuStyle className="MenuList-example">
       <MenuList>
-        <Link to="/profile">
-          <MenuItem contentBefore={<IconUser />}>ProfileArthur</MenuItem>
-        </Link>
         <Link to="/list">
           <MenuItem contentBefore={<IconList />}>
             {/* List</Link> */}
             List
           </MenuItem>
         </Link>
-        <Link to="/test">
-          <MenuItem contentBefore={<IconHome />}>Moments</MenuItem>
+        <Link to="/materials">
+          <MenuItem contentBefore={<IconArchive />}>Materials</MenuItem>
         </Link>
         <MenuDivider />
-        <MenuItem contentBefore={<IconInstagram />}>Promote Mode</MenuItem>
-        <MenuItem contentBefore={<IconPackage />} contentAfter="⌘A">
-          Analytics
-        </MenuItem>
+        <Link to="/profile">
+          <MenuItem contentBefore={<IconUser />}>ProfileArthur</MenuItem>
+        </Link>
       </MenuList>
     </MenuStyle>
   );
