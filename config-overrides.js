@@ -11,7 +11,7 @@ module.exports = function override(config, env) {
     new BundleAnalyzerPlugin({
       analyzerMode: "server",
       analyzerHost: "localhost",
-      analyzerPort: 8888,
+      analyzerPort: 4444,
       reportFilename: "report.html",
       defaultSizes: "parsed",
       openAnalyzer: false,
