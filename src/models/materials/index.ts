@@ -1,1 +1,0 @@
-export { materialsAtom } from "./materials";

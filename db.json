@@ -1,6 +1,6 @@
+// http://my-json-server.typicode.com/DonkovtsevArthur/code-project/materials
 {
-  "materials": [
-    {
+  "materials": [{
       "id": "1",
       "title": "Material one",
       "date": "12.01.2009",

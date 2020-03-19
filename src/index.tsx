@@ -1,22 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "redux-zero/react";
-
-import { store } from "./store";
 
 import * as serviceWorker from "./serviceWorker";
 import ThemeProviderComponent from "./libs/themeSancho/ThemeProviderComponent/";
 import App from "./components/main";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ThemeProviderComponent>
-      <Router>
-        <App />
-      </Router>
-    </ThemeProviderComponent>
-  </Provider>,
+  <ThemeProviderComponent>
+    <Router>
+      <App />
+    </Router>
+  </ThemeProviderComponent>,
   document.getElementById("root")
 );
 

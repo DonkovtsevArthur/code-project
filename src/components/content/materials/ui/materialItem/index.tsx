@@ -1,13 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Embed, Text, Button } from "sancho";
-
-interface IProps {
-  img: string;
-  title: string;
-  date: string;
-  description: string;
-}
+import { IProps } from "../types";
 
 export const MaterialItem = ({ img, title, date, description }: IProps) => (
   <div className="material-item">
