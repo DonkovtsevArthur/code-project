@@ -8,20 +8,21 @@ import { WrapperCodeStyle, GlobalStyle } from "./style";
 import Menu from "../menu";
 import Content from "../content";
 import ErrorBoundary from "./errorBoundary";
+import { store } from "../../models/store";
 
 const App: React.FC = () => {
-  const store = createStore();
   useEffect(() => connectReduxDevtools(store), []);
   return (
-    <WrapperCodeStyle>
-      <ErrorBoundary>
-        <GlobalStyle />
-        <context.Provider value={store}>
+    <context.Provider value={store}>
+      <WrapperCodeStyle>
+        <ErrorBoundary>
+          <GlobalStyle />
+
           <Menu />
           <Content />
-        </context.Provider>
-      </ErrorBoundary>
-    </WrapperCodeStyle>
+        </ErrorBoundary>
+      </WrapperCodeStyle>
+    </context.Provider>
   );
 };
 

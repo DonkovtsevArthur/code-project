@@ -12,8 +12,8 @@ interface IError {
 }
 
 const AXIOS = axios.create({
-  baseURL: process.env && process.env.REACT_APP_BASE_URL,
-  timeout: 1000,
+  baseURL: process.env && process.env.REACT_APP_MY_JSON,
+  timeout: 60000,
   headers: {
     "Content-Type": "application/json"
   }

@@ -1,5 +1,5 @@
 import { declareAtom } from "@reatom/core";
-import { materialsSuccess } from "./actions";
+import { materialsSuccess, materialsFetch, materialsError } from "./actions";
 import { IState, IMaterials } from ".";
 
 const initialState: IState = {
@@ -10,15 +10,34 @@ const initialState: IState = {
 
 export const materialsAtom = declareAtom(["materials"], initialState, on => [
   on(
-    materialsSuccess,
-    (state: IState, payload: [IMaterials]): IState => {
+    materialsFetch,
+    (state: IState): IState => {
       return {
         ...state,
-        data: payload,
+        error: "",
+        isLoading: true
+      };
+    }
+  ),
+  on(
+    materialsSuccess,
+    (state: IState, payload: IMaterials): IState => {
+      return {
+        ...state,
+        data: payload.materials,
+        isLoading: false
+      };
+    }
+  ),
+  on(
+    materialsError,
+    (state: IState, payload: { message?: string }): IState => {
+      return {
+        ...state,
+        data: [],
+        error: payload.message || "error",
         isLoading: false
       };
     }
   )
 ]);
-
-

@@ -5,7 +5,6 @@ import { routerPage } from "./settings";
 
 export default () => {
   const { path } = useRouteMatch();
-  console.log("MaterialsPage -> path", path);
 
   return (
     <Switch>

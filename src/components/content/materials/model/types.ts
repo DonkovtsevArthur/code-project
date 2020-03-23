@@ -1,4 +1,4 @@
-export interface IMaterials {
+interface Materials {
   id: string;
   title: string;
   description: string;
@@ -6,8 +6,12 @@ export interface IMaterials {
   img: string;
 }
 
+export interface IMaterials {
+  materials: Materials[];
+}
+
 export interface IState {
-  data: IMaterials[];
+  data: Materials[];
   error: string;
   isLoading: boolean;
 }
