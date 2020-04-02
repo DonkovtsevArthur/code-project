@@ -1,8 +1,8 @@
 import axios from "axios";
 
 interface IParams {
-  url: string;
-  method: any;
+  url?: string;
+  method?: any;
 }
 
 interface IError {
@@ -12,21 +12,18 @@ interface IError {
 }
 
 const AXIOS = axios.create({
-  baseURL: process.env && process.env.REACT_APP_MY_JSON,
+  baseURL: process.env && process.env.REACT_APP_MY_JSON ,
   timeout: 60000,
   headers: {
     "Content-Type": "application/json"
   }
 });
 
-export const $axios = ({ url = "", method = "get" }) => {
+export const $axios = (axiosParams: IParams) => {
+  const { url = "", method = "get" } = axiosParams || {};
   let error: IError = { status: 401, message: "" };
 
-  const params: IParams = {
-    url,
-    method
-  };
-  return AXIOS(params)
+  return AXIOS({ url, method })
     .then(({ status, data }) => {
       if (status === 200) {
         return data;

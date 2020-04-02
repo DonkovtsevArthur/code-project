@@ -17,7 +17,6 @@ const App: React.FC = () => {
       <WrapperCodeStyle>
         <ErrorBoundary>
           <GlobalStyle />
-
           <Menu />
           <Content />
         </ErrorBoundary>

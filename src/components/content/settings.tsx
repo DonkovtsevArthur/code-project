@@ -4,10 +4,6 @@ export const routers = [
     page: "list"
   },
   {
-    path: "/profile",
-    page: "profile"
-  },
-  {
     path: "/materials",
     page: "materials"
   }

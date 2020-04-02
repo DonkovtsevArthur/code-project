@@ -15,6 +15,9 @@ const AsyncPage = loadable(({ page }: IAsyncPage) => import(`./${page}`), {
   fallback: <Spinner className="spinner" />
 });
 
+const LoginIn = loadable(() => import("./loginIn"));
+const Profile = loadable(() => import("./profile"));
+
 const Content: React.FC = () => {
   return (
     <WrapperContentStyle>
@@ -26,6 +29,10 @@ const Content: React.FC = () => {
             render={() => <AsyncPage page={page} />}
           />
         ))}
+        <Route
+          path="/profile"
+          render={() => (true ? <LoginIn /> : <Profile />)}
+        />
       </Switch>
     </WrapperContentStyle>
   );

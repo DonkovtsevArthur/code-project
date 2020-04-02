@@ -1,33 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  MenuList,
-  MenuItem,
-  IconUser,
-  IconList,
-  IconArchive,
-  MenuDivider
-} from "sancho";
+import { NavLink } from "react-router-dom";
+import { MenuList, MenuItem, MenuDivider } from "sancho";
 
 import { MenuStyle } from "./style";
+import { menuList } from "./helpers";
 
 const Menu: React.FC = () => {
   return (
-    <MenuStyle className="MenuList-example">
+    <MenuStyle>
       <MenuList>
-        <Link to="/list">
-          <MenuItem contentBefore={<IconList />}>
-            {/* List</Link> */}
-            List
-          </MenuItem>
-        </Link>
-        <Link to="/materials">
-          <MenuItem contentBefore={<IconArchive />}>Materials</MenuItem>
-        </Link>
-        <MenuDivider />
-        <Link to="/profile">
-          <MenuItem contentBefore={<IconUser />}>ProfileArthur</MenuItem>
-        </Link>
+        {menuList.map(({ to, Icon, title }) => {
+          return (
+            <React.Fragment key={title}>
+              {title === "Profile" && <MenuDivider />}
+              <NavLink to={to}>
+                <MenuItem className="menu-item" contentBefore={<Icon />}>
+                  {title}
+                </MenuItem>
+              </NavLink>
+            </React.Fragment>
+          );
+        })}
       </MenuList>
     </MenuStyle>
   );
