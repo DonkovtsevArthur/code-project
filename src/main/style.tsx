@@ -1,4 +1,4 @@
-import { styled, createGlobalStyle } from "../../libs/styles/index";
+import { styled, createGlobalStyle } from "../libs/styles/index";
 
 const GlobalStyle = createGlobalStyle`
   body {

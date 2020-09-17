@@ -1,4 +1,5 @@
-import { styled } from "../../libs/styles";
+import { styled } from "../libs/styles";
+
 
 export const WrapperContentStyle = styled.div`
   position: relative;

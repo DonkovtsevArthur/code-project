@@ -1,4 +1,4 @@
-import { styled } from "../../../../libs/styles";
+import styled from "styled-components";
 
 export const WrapperMaterialStyle = styled.div`
   display: flex;

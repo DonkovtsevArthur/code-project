@@ -8,8 +8,8 @@ export default () => {
 
   return (
     <Switch>
-      {routerPage(path).map(({ url, component }, i) => (
-        <Route key={i} exact path={url} component={component} />
+      {routerPage(path).map(({ url, Component }) => (
+        <Route key={url} exact path={url} component={Component} />
       ))}
     </Switch>
   );

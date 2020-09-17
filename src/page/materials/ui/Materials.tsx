@@ -3,18 +3,20 @@ import { useAtom, useAction } from "@reatom/react";
 
 import { WrapperMaterialStyle } from "./style";
 
-import { MaterialItem } from "./materialItem";
 import { materialsAtom, materialFetch } from "../model";
-import { IProps } from "./types";
-import { Preloader } from "../../../preloader";
-import { ErrorMessage } from "../../../errorMessage";
+
+import { Preloader } from "../../../components/preloader";
+import { ErrorMessage } from "../../../components/errorMessage";
+import MaterialsList from "../../../components/Materials/MaterialsList";
 
 export const Materials = () => {
   const { data: materials, isLoading, error } = useAtom(materialsAtom);
   const fetchMaterials = useAction(materialFetch);
 
   useEffect(() => {
-    materials.length === 0 && fetchMaterials();
+    if (materials.length === 0) {
+      fetchMaterials();
+    }
   }, []);
 
   if (isLoading) {
@@ -23,13 +25,7 @@ export const Materials = () => {
 
   return (
     <WrapperMaterialStyle>
-      {error ? (
-        <ErrorMessage />
-      ) : (
-        materials.map(({ id, ...props }: IProps) => (
-          <MaterialItem key={id} {...props} />
-        ))
-      )}
+      {error ? <ErrorMessage /> : <MaterialsList />}
     </WrapperMaterialStyle>
   );
 };

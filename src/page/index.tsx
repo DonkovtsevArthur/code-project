@@ -15,10 +15,10 @@ const AsyncPage = loadable(({ page }: IAsyncPage) => import(`./${page}`), {
   fallback: <Spinner className="spinner" />
 });
 
-const LoginIn = loadable(() => import("./loginIn"));
-const Profile = loadable(() => import("./profile"));
+const LoginIn = loadable(() => import("../components/content/loginIn"));
+const Profile = loadable(() => import("../components/content/profile"));
 
-const Content: React.FC = () => {
+const RouteContent: React.FC = () => {
   return (
     <WrapperContentStyle>
       <Switch>
@@ -38,4 +38,4 @@ const Content: React.FC = () => {
   );
 };
 
-export default Content;
+export default RouteContent;

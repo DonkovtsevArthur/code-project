@@ -1,6 +1,6 @@
 import { declareAtom } from "@reatom/core";
 import { materialsSuccess, materialsFetch, materialsError } from "./actions";
-import { IState, IMaterials } from ".";
+import { IState, Materials } from ".";
 
 const initialState: IState = {
   data: [],
@@ -21,10 +21,11 @@ export const materialsAtom = declareAtom(["materials"], initialState, on => [
   ),
   on(
     materialsSuccess,
-    (state: IState, payload: IMaterials): IState => {
+    (state: IState, payload: Materials[]): IState => {
+      console.log("payload", payload);
       return {
         ...state,
-        data: payload.materials,
+        data: payload,
         isLoading: false
       };
     }

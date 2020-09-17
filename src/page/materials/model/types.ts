@@ -1,4 +1,4 @@
-interface Materials {
+export interface Materials {
   id: string;
   title: string;
   description: string;

@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import * as serviceWorker from "./serviceWorker";
 import ThemeProviderComponent from "./libs/themeSancho/ThemeProviderComponent/";
-import App from "./components/main";
+import App from "./main";
 
 ReactDOM.render(
   <ThemeProviderComponent>

@@ -1,8 +1,9 @@
 import { declareAction } from "@reatom/core";
-import { $axios } from "../../../../models/axios";
-import { IMaterials } from ".";
 
-export const materialsSuccess = declareAction<IMaterials, "materialsSuccess">([
+import { Materials } from ".";
+import { $axios } from "../../../models/axios";
+
+export const materialsSuccess = declareAction<Materials[], "materialsSuccess">([
   "materialsSuccess"
 ]);
 
@@ -19,7 +20,7 @@ export const materialFetch = declareAction(
   (payload, { dispatch, ...rest }) => {
     dispatch(materialsFetch());
     $axios({})
-      .then((res: IMaterials) => {
+      .then((res: Materials[]) => {
         return dispatch(materialsSuccess(res));
       })
       .catch(error => {

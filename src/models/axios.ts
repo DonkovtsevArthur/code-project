@@ -12,11 +12,8 @@ interface IError {
 }
 
 const AXIOS = axios.create({
-  baseURL: process.env && process.env.REACT_APP_MY_JSON ,
-  timeout: 60000,
-  headers: {
-    "Content-Type": "application/json"
-  }
+  baseURL: process.env && process.env.REACT_APP_MY_JSON,
+  timeout: 60000
 });
 
 export const $axios = (axiosParams: IParams) => {
