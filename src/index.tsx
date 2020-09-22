@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import ThemeProviderComponent from "./libs/themeSancho/ThemeProviderComponent/";
 import App from "./main";
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <ThemeProviderComponent>
     <Router>
       <App />
