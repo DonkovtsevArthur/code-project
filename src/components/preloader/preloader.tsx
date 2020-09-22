@@ -1,9 +1,9 @@
 import React from "react";
 import { Spinner } from "sancho";
 
-interface IProps {
+type IProps = {
   className?: string;
-}
+};
 
 export const Preloader: React.FC<IProps> = ({ className = "" }) => {
   return (

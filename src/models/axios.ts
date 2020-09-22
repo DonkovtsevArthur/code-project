@@ -1,15 +1,15 @@
-import axios from "axios";
+import axios, { Method } from "axios";
 
-interface IParams {
+type IParams = {
   url?: string;
-  method?: any;
-}
+  method?: Method;
+};
 
-interface IError {
+type IError = {
   status: number;
   message: string;
   data?: any;
-}
+};
 
 const AXIOS = axios.create({
   baseURL: process.env && process.env.REACT_APP_MY_JSON,

@@ -1,8 +1,8 @@
 import { styled } from "../../libs/styles";
 
-interface IStyle {
+type IStyle = {
   isPopupShow: boolean;
-}
+};
 
 export const WrapperPopupStyle = styled.div<IStyle>`
   position: fixed;

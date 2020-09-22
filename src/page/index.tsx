@@ -7,9 +7,9 @@ import { Spinner } from "sancho";
 import { WrapperContentStyle } from "./style";
 import { routers } from "./settings";
 
-interface IAsyncPage {
+type IAsyncPage = {
   page: string;
-}
+};
 
 const AsyncPage = loadable(({ page }: IAsyncPage) => import(`./${page}`), {
   fallback: <Spinner className="spinner" />

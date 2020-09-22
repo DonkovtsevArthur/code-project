@@ -4,7 +4,6 @@ import { Embed, Text, Button } from "sancho";
 import { IMaterialItem } from "./i";
 
 const MaterialItem = ({ img, title, date, description }: IMaterialItem) => {
-  console.log("MaterialItem");
   return (
     <div className="material-item">
       <Embed width={707} height={448}>

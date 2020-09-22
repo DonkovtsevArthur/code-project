@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { createStore } from "@reatom/core";
 import { context } from "@reatom/react";
 import { connectReduxDevtools } from "@reatom/debug";
 // styles

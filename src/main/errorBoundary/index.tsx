@@ -1,12 +1,12 @@
 import React from "react";
 
-interface IProps {
+type IProps = {
   children: any;
-}
+};
 
-interface IState {
+type IState = {
   hasError: boolean;
-}
+};
 
 class ErrorBoundary extends React.Component<IProps, IState> {
   constructor(props: IProps) {

@@ -15,9 +15,9 @@ const theme = {
   }
 };
 
-interface ITheme {
+type ITheme = {
   children: React.ReactNode;
-}
+};
 
 const ThemeProviderComponent: React.FC<ITheme> = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>

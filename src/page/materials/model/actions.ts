@@ -1,31 +1,26 @@
 import { declareAction } from "@reatom/core";
 
-import { Materials } from ".";
+import { Materials, TypeActions } from ".";
 import { $axios } from "../../../models/axios";
 
-export const materialsSuccess = declareAction<Materials[], "materialsSuccess">([
-  "materialsSuccess"
+const success = declareAction<Materials[], TypeActions.success>([
+  TypeActions.success
 ]);
-
-export const materialsFetch = declareAction<"materialsFetch">([
-  "materialsFetch"
-]);
-
-export const materialsError = declareAction<any, "materialsError">([
-  "materialsError"
-]);
-
-export const materialFetch = declareAction(
+const request = declareAction<TypeActions.request>([TypeActions.request]);
+const error = declareAction<any, TypeActions.error>([TypeActions.error]);
+const materialFetch = declareAction(
   ["fetchActionMaterials"],
   (payload, { dispatch, ...rest }) => {
-    dispatch(materialsFetch());
+    dispatch(request());
     $axios({})
       .then((res: Materials[]) => {
-        return dispatch(materialsSuccess(res));
+        return dispatch(success(res));
       })
       .catch(error => {
         console.error("materials error", error);
-        return dispatch(materialsError(error));
+        return dispatch(error(error));
       });
   }
 );
+
+export { success, request, error, materialFetch };
