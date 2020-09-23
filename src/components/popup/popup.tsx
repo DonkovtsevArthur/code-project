@@ -27,11 +27,11 @@ export const Popup: React.FC<IPopup> = ({ children }) => {
 
   return (
     <>
-      {isPopupShow ? (
+      {isPopupShow && (
         <WrapperPopupStyle className={popupStyle} isPopupShow={isPopupShow}>
           <div className="popup-body">{children}</div>
         </WrapperPopupStyle>
-      ) : null}
+      )}
     </>
   );
 };
